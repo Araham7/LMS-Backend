@@ -7,17 +7,15 @@ const router = Router();
 
 
 // (1). Route to getRazorpayApiKey :---
-router
-      .route('/razorpay-key')
+router.route('/razorpay-key')
       .get(
         isLoggedIn, 
         getRazorpayApiKey
       );
- 
+
 
 // (2). Route to Subscribe(buy) course :---
-router
-      .route("/subscribe")
+router.route("/subscribe")
       .post(
         isLoggedIn,
         buySubscription
@@ -25,8 +23,7 @@ router
 
 
 // (3). Route to verify-course-subscription :---
-router
-      .route("/verify")
+router.route("/verify")
       .post(
         isLoggedIn,
         verifySubscription
@@ -34,8 +31,7 @@ router
 
 
 // (4). Route to unsubscribe course subscription :---
-router
-      .route("/unsubscribe")
+router.route("/unsubscribe")
       .post(
         isLoggedIn,
         cancelSubscription
@@ -43,8 +39,7 @@ router
 
 
 // (5). Route to getAllPayments :---
-router
-      .route("/")
+router.route("/")
       .get(
         isLoggedIn, 
         authorizedRoles("ADMIN"),
